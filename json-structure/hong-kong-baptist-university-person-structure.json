@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://scholars.hkbu.edu.hk/ws/api/structures/person.json",
+  "name": "Person",
+  "description": "JSON Structure for a Pure person as served by the HKBU Scholars Pure Web Service API.",
+  "type": "object",
+  "properties": {
+    "pureId": { "type": "int64" },
+    "uuid": { "type": "string" },
+    "createdDate": { "type": "string" },
+    "modifiedDate": { "type": "string" },
+    "portalUrl": { "type": "string" },
+    "version": { "type": "string" },
+    "name": { "type": "object", "properties": {} },
+    "names": { "type": "array", "items": { "type": "object", "properties": {} } },
+    "titles": { "type": "array", "items": { "type": "object", "properties": {} } },
+    "gender": { "type": "object", "properties": {} },
+    "staffOrganizationAssociations": { "type": "array", "items": { "type": "object", "properties": {} } }
+  }
+}

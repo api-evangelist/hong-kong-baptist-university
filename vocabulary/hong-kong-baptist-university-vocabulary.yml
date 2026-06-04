@@ -1,0 +1,71 @@
+vocabulary:
+  name: HKBU Scholars Pure Web Service Vocabulary
+  description: >-
+    Controlled vocabulary of the core terms used by the Hong Kong Baptist University
+    Scholars research portal, powered by the Elsevier Pure Web Service API (Pure API
+    5.35.0). Terms are drawn from the real OpenAPI contract published at
+    https://scholars.hkbu.edu.hk/ws/api/openapi.yaml.
+  version: "5.35.0"
+  terms:
+    - term: ResearchOutput
+      definition: >-
+        A research result such as a journal article, book, conference contribution,
+        or other scholarly work, with its contributors, type, category, language,
+        publication statuses, and managing organization.
+      tags: [ research, publication, entity ]
+    - term: Person
+      definition: >-
+        A researcher or staff member, including structured names, titles, and staff
+        organization associations.
+      tags: [ people, researcher, entity ]
+    - term: Organization
+      definition: >-
+        An organizational unit (department, faculty, centre) with a name, type, and
+        lifecycle (active period).
+      tags: [ organization, unit, entity ]
+    - term: Project
+      definition: >-
+        A research project with a title, type, managing organization, and associated
+        organizations.
+      tags: [ research, project, entity ]
+    - term: Activity
+      definition: >-
+        A research-related activity such as a talk, membership, editorial work,
+        examination, or visit.
+      tags: [ research, activity, entity ]
+    - term: uuid
+      definition: >-
+        The universally unique identifier that is the primary identity of every Pure
+        entity.
+      tags: [ identifier, field ]
+    - term: pureId
+      definition: >-
+        The internal Pure database integer ID of an object; the UUID is preferred when
+        present.
+      tags: [ identifier, field ]
+    - term: portalUrl
+      definition: URL of the content item on the public Pure Portal.
+      tags: [ url, field ]
+    - term: publicationStatuses
+      definition: >-
+        Ordered list of publication statuses (e.g. submitted, accepted, published)
+        with associated dates for a research output.
+      tags: [ publication, lifecycle, field ]
+    - term: managingOrganization
+      definition: The organization responsible for managing a research output or project.
+      tags: [ organization, relationship, field ]
+    - term: ListResult
+      definition: >-
+        A paged list response wrapper exposing count (full count ignoring paging),
+        pageInformation, and an items array.
+      tags: [ pagination, response, pattern ]
+    - term: ClassificationRef
+      definition: >-
+        A reference to a controlled-vocabulary classification value, carrying a uri and
+        a localized term.
+      tags: [ classification, reference, pattern ]
+    - term: api-key
+      definition: >-
+        The header-based API key required to access protected Pure data endpoints;
+        requests without it return HTTP 401.
+      tags: [ authentication, security ]

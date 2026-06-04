@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scholars.hkbu.edu.hk/ws/api/schemas/research-output.json",
+  "title": "ResearchOutput",
+  "description": "A research output (publication, contribution, etc.) in the HKBU Scholars Pure Web Service API. Derived from the real Pure API 5.35.0 OpenAPI contract.",
+  "type": "object",
+  "required": ["title", "type", "category", "language", "managingOrganization", "publicationStatuses", "contributors", "typeDiscriminator"],
+  "properties": {
+    "pureId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Pure database ID of the object; prefer using the UUID if present."
+    },
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID, the primary identity of the entity."
+    },
+    "createdBy": { "type": "string", "description": "Username of creator." },
+    "createdDate": { "type": "string", "format": "date-time", "description": "Date and time of creation." },
+    "modifiedBy": { "type": "string", "description": "Username of the user that performed a modification." },
+    "modifiedDate": { "type": "string", "format": "date-time", "description": "Date and time of last modification." },
+    "portalUrl": { "type": "string", "description": "URL of the content on the Pure Portal." },
+    "prettyUrlIdentifiers": {
+      "type": "array",
+      "description": "All pretty URLs.",
+      "items": { "type": "string" }
+    },
+    "previousUuids": {
+      "type": "array",
+      "description": "UUIDs of other content items which have been merged into this content item.",
+      "items": { "type": "string" }
+    },
+    "version": {
+      "type": "string",
+      "description": "Used to guard against conflicting updates."
+    },
+    "title": {
+      "type": "object",
+      "description": "Title of the research output (localized string container)."
+    },
+    "type": {
+      "type": "object",
+      "description": "Classification reference for the research output type."
+    },
+    "category": {
+      "type": "object",
+      "description": "Classification reference for the research output category."
+    },
+    "language": {
+      "type": "object",
+      "description": "Classification reference for the language of the output."
+    },
+    "managingOrganization": {
+      "type": "object",
+      "description": "Reference to the managing organization for this output."
+    },
+    "publicationStatuses": {
+      "type": "array",
+      "description": "Publication statuses with associated dates.",
+      "items": { "type": "object" }
+    },
+    "contributors": {
+      "type": "array",
+      "description": "Contributors (persons / author collaborations) associated with the output.",
+      "items": { "type": "object" }
+    },
+    "typeDiscriminator": {
+      "type": "string",
+      "description": "Discriminator identifying the concrete research output subtype."
+    }
+  },
+  "additionalProperties": true
+}

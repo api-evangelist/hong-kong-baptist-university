@@ -46,8 +46,32 @@ apis:
         url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
       - type: OpenAPI
         url: https://scholars.hkbu.edu.hk/ws/api/openapi.yaml
+      - type: OpenAPI
+        url: openapi/hong-kong-baptist-university-pure-research-api.yaml
       - type: Authentication
         url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+      - type: JSONSchema
+        url: json-schema/hong-kong-baptist-university-research-output-schema.json
+      - type: JSONSchema
+        url: json-schema/hong-kong-baptist-university-person-schema.json
+      - type: JSONSchema
+        url: json-schema/hong-kong-baptist-university-organization-schema.json
+      - type: x-json-structure
+        url: json-structure/hong-kong-baptist-university-research-output-structure.json
+      - type: x-json-structure
+        url: json-structure/hong-kong-baptist-university-person-structure.json
+      - type: x-json-structure
+        url: json-structure/hong-kong-baptist-university-organization-structure.json
+      - type: x-example
+        url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+      - type: x-example
+        url: examples/hong-kong-baptist-university-list-persons-example.json
+      - type: x-spectral-rules
+        url: rules/hong-kong-baptist-university-rules.yml
+      - type: x-vocabulary
+        url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+      - type: x-json-ld-context
+        url: json-ld/hong-kong-baptist-university-context.jsonld
   - aid: hong-kong-baptist-university:mobile-app-backend
     name: HKBU Mobile App Backend (gated)
     description: >-

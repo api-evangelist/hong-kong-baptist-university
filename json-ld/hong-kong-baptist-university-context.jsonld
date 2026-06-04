@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "hkbu": "https://scholars.hkbu.edu.hk/ws/api/vocab#",
+    "@vocab": "https://scholars.hkbu.edu.hk/ws/api/vocab#",
+    "id": "@id",
+    "type": "@type",
+
+    "institution": {
+      "@id": "schema:CollegeOrUniversity",
+      "@type": "@id"
+    },
+    "name": "schema:name",
+    "url": "schema:url",
+
+    "ResearchOutput": "schema:CreativeWork",
+    "Person": "schema:Person",
+    "Organization": "schema:Organization",
+    "Project": "schema:Project",
+    "Activity": "schema:Event",
+
+    "uuid": "schema:identifier",
+    "pureId": "hkbu:pureId",
+    "portalUrl": { "@id": "schema:url", "@type": "@id" },
+    "title": "schema:headline",
+    "createdDate": { "@id": "schema:dateCreated", "@type": "schema:DateTime" },
+    "modifiedDate": { "@id": "schema:dateModified", "@type": "schema:DateTime" },
+    "contributors": { "@id": "schema:author", "@container": "@set" },
+    "managingOrganization": { "@id": "schema:publisher", "@type": "@id" },
+    "publicationStatuses": "hkbu:publicationStatuses",
+    "language": "schema:inLanguage",
+    "lifecycle": "hkbu:lifecycle",
+    "staffOrganizationAssociations": { "@id": "schema:affiliation", "@container": "@set" }
+  },
+  "@type": "schema:CollegeOrUniversity",
+  "name": "Hong Kong Baptist University",
+  "url": "https://www.hkbu.edu.hk/"
+}

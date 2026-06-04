@@ -1,0 +1,49 @@
+extends: [[spectral:oas, off]]
+formats:
+  - oas3
+documentationUrl: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+rules:
+  hkbu-info-title-present:
+    description: API document must declare an info.title.
+    severity: error
+    given: $.info
+    then:
+      field: title
+      function: truthy
+  hkbu-info-version-present:
+    description: API document must declare an info.version (Pure release version).
+    severity: error
+    given: $.info
+    then:
+      field: version
+      function: truthy
+  hkbu-server-is-pure-host:
+    description: Server URL should point at the HKBU Scholars Pure web service host.
+    severity: warn
+    given: $.servers[*]
+    then:
+      field: url
+      function: pattern
+      functionOptions:
+        match: "scholars\\.hkbu\\.edu\\.hk|/ws/api"
+  hkbu-apikey-security-scheme:
+    description: Pure data endpoints are protected by an api-key header security scheme.
+    severity: warn
+    given: $.components.securitySchemes
+    then:
+      field: api-key
+      function: truthy
+  hkbu-get-operations-have-200:
+    description: GET operations should document a 200 response.
+    severity: warn
+    given: $.paths[*].get.responses
+    then:
+      field: "200"
+      function: truthy
+  hkbu-list-results-have-count:
+    description: ListResult schemas should expose a count property (full count ignoring paging).
+    severity: info
+    given: $.components.schemas[?(@property.match(/ListResult$/))].properties
+    then:
+      field: count
+      function: truthy

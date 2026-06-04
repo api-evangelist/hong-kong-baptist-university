@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scholars.hkbu.edu.hk/ws/api/schemas/person.json",
+  "title": "Person",
+  "description": "A person (researcher / staff member) in the HKBU Scholars Pure Web Service API. Derived from the real Pure API 5.35.0 OpenAPI contract.",
+  "type": "object",
+  "properties": {
+    "pureId": { "type": "integer", "format": "int64", "description": "Pure database ID of the object." },
+    "uuid": { "type": "string", "format": "uuid", "description": "UUID, the primary identity of the entity." },
+    "createdBy": { "type": "string", "description": "Username of creator." },
+    "createdDate": { "type": "string", "format": "date-time", "description": "Date and time of creation." },
+    "modifiedBy": { "type": "string", "description": "Username of the user that performed a modification." },
+    "modifiedDate": { "type": "string", "format": "date-time", "description": "Date and time of last modification." },
+    "portalUrl": { "type": "string", "description": "URL of the content on the Pure Portal." },
+    "prettyUrlIdentifiers": { "type": "array", "items": { "type": "string" }, "description": "All pretty URLs." },
+    "previousUuids": { "type": "array", "items": { "type": "string" }, "description": "UUIDs of merged content items." },
+    "version": { "type": "string", "description": "Used to guard against conflicting updates." },
+    "name": {
+      "type": "object",
+      "description": "Structured name of the person (first/last name container)."
+    },
+    "names": {
+      "type": "array",
+      "description": "Additional/alternative name variants.",
+      "items": { "type": "object" }
+    },
+    "titles": {
+      "type": "array",
+      "description": "Academic or honorary titles.",
+      "items": { "type": "object" }
+    },
+    "gender": {
+      "type": "object",
+      "description": "Classification reference for gender."
+    },
+    "staffOrganizationAssociations": {
+      "type": "array",
+      "description": "Associations between the person and organizations as staff.",
+      "items": { "type": "object" }
+    }
+  },
+  "additionalProperties": true
+}

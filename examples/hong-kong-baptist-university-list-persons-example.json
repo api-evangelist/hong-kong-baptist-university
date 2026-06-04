@@ -1,0 +1,29 @@
+{
+  "count": 3120,
+  "pageInformation": {
+    "offset": 0,
+    "size": 1
+  },
+  "items": [
+    {
+      "pureId": 7654321,
+      "uuid": "0a1b2c3d-4e5f-6071-8293-a4b5c6d7e8f9",
+      "createdDate": "2019-09-01T00:00:00.000Z",
+      "modifiedDate": "2024-02-20T14:51:09.000Z",
+      "portalUrl": "https://scholars.hkbu.edu.hk/en/persons/0a1b2c3d-4e5f-6071-8293-a4b5c6d7e8f9",
+      "name": { "firstName": "Mei", "lastName": "Wong" },
+      "titles": [
+        { "value": { "en_GB": "Professor" } }
+      ],
+      "staffOrganizationAssociations": [
+        {
+          "organization": {
+            "uuid": "0a1b2c3d-4e5f-6071-8293-a4b5c6d7e8f9",
+            "name": { "en_GB": "Department of Computer Science" }
+          },
+          "period": { "startDate": "2015-08-01" }
+        }
+      ]
+    }
+  ]
+}

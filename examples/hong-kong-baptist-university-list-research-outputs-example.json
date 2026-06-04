@@ -1,0 +1,55 @@
+{
+  "count": 12453,
+  "pageInformation": {
+    "offset": 0,
+    "size": 1
+  },
+  "items": [
+    {
+      "pureId": 1234567,
+      "uuid": "f1a2b3c4-d5e6-7890-ab12-3456789abcde",
+      "createdDate": "2023-04-15T08:22:10.000Z",
+      "modifiedDate": "2024-01-09T11:03:44.000Z",
+      "portalUrl": "https://scholars.hkbu.edu.hk/en/publications/f1a2b3c4-d5e6-7890-ab12-3456789abcde",
+      "title": {
+        "value": "An Example Research Output Title"
+      },
+      "type": {
+        "uri": "/dk/atira/pure/researchoutput/researchoutputtypes/contributiontojournal/article",
+        "term": { "en_GB": "Article" }
+      },
+      "category": {
+        "uri": "/dk/atira/pure/researchoutput/category/academic",
+        "term": { "en_GB": "Academic" }
+      },
+      "language": {
+        "uri": "/dk/atira/pure/core/languages/en_GB",
+        "term": { "en_GB": "English" }
+      },
+      "managingOrganization": {
+        "uuid": "0a1b2c3d-4e5f-6071-8293-a4b5c6d7e8f9",
+        "name": { "en_GB": "Department of Computer Science" }
+      },
+      "publicationStatuses": [
+        {
+          "current": true,
+          "publicationStatus": {
+            "uri": "/dk/atira/pure/researchoutput/status/published",
+            "term": { "en_GB": "Published" }
+          },
+          "publicationDate": { "year": 2023, "month": 11 }
+        }
+      ],
+      "contributors": [
+        {
+          "name": { "firstName": "Wai", "lastName": "Chan" },
+          "role": {
+            "uri": "/dk/atira/pure/researchoutput/roles/contributiontojournal/author",
+            "term": { "en_GB": "Author" }
+          }
+        }
+      ],
+      "typeDiscriminator": "ContributionToJournal"
+    }
+  ]
+}
