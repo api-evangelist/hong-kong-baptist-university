@@ -1,0 +1,83 @@
+---
+aid: hong-kong-baptist-university
+name: Hong Kong Baptist University
+description: >-
+  Hong Kong Baptist University (HKBU) is a publicly funded research university in
+  Hong Kong SAR, ranked #253 in the QS World University Rankings 2025. Its public,
+  machine-readable footprint centers on research information: the HKBU Scholars
+  research portal is powered by Elsevier Pure, which exposes a documented Pure Web
+  Service API (OpenAPI 3) for research outputs, persons, organisations, and related
+  metadata. HKBU also operates a mobile-app backend and various library and digital
+  scholarship platforms, though most of these are gated or undocumented for external
+  developers and require institutional affiliation. There is no central institutional
+  developer portal or organization-wide GitHub org; public code is published by
+  individual research groups.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/hong-kong-baptist-university/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Research
+  - Hong Kong
+  - Pure
+  - Research Information
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: hong-kong-baptist-university:pure-research-api
+    name: HKBU Scholars Pure Web Service API
+    description: >-
+      REST web service API for the HKBU Scholars research portal, powered by Elsevier
+      Pure. Exposes the Pure data model (research outputs, persons, organisations,
+      projects, activities, and related metadata) as a graph of interconnected
+      resources over standard HTTP methods. The OpenAPI 3.0.1 contract is publicly
+      retrievable and interactive RapiDoc documentation is served from the same host;
+      data endpoints require an API key (return HTTP 401 without one).
+    humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+    baseURL: https://scholars.hkbu.edu.hk/ws/api/
+    tags: [ Research, Research Information, Pure, Metadata, Scholarly ]
+    properties:
+      - type: Documentation
+        url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+      - type: OpenAPI
+        url: https://scholars.hkbu.edu.hk/ws/api/openapi.yaml
+      - type: Authentication
+        url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - aid: hong-kong-baptist-university:mobile-app-backend
+    name: HKBU Mobile App Backend (gated)
+    description: >-
+      Backend host serving the official HKBU mobile application (mapp-api.hkbu.edu.hk).
+      The host resolves and serves app support content such as the app privacy notice,
+      but there is no public developer documentation, OpenAPI spec, or self-service
+      sign-up; the API is intended for the first-party mobile client only. Listed for
+      completeness; no endpoints are documented or independently verified.
+    humanURL: https://mapp-api.hkbu.edu.hk/html/app_privacy_policy.html
+    tags: [ Mobile, Backend, Gated ]
+    properties:
+      - type: Documentation
+        url: https://mapp-api.hkbu.edu.hk/html/app_privacy_policy.html
+common:
+  - type: Website
+    url: https://www.hkbu.edu.hk/
+  - type: GitHub
+    url: https://github.com/HKBUNLP
+  - type: LinkedIn
+    url: https://hk.linkedin.com/school/hong-kong-baptist-university/
+  - type: Twitter
+    url: https://x.com/hkbaptistu
+  - type: Plans
+    url: plans/hong-kong-baptist-university-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/hong-kong-baptist-university-rate-limits.yml
+  - type: FinOps
+    url: finops/hong-kong-baptist-university-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,62 @@
+---
+name: Hong Kong Baptist University
+description: Hong Kong Baptist University public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/hong-kong-baptist-university/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 2
+    summary: >-
+      Verified one genuinely documented API: the HKBU Scholars Pure Web Service API,
+      whose OpenAPI 3.0.1 contract (/ws/api/openapi.yaml) and RapiDoc docs
+      (/ws/api/rapidoc.html) both return HTTP 200, while data endpoints return HTTP 401
+      pending an API key as expected for Pure. The mobile-app backend host
+      (mapp-api.hkbu.edu.hk) resolves and serves app support pages but exposes no public
+      developer docs or sign-up. The institutional repository host (repository.hkbu.edu.hk)
+      did not resolve from this network. No central institutional developer portal and no
+      organization-wide GitHub org were found; only research-group orgs (HKBUNLP, HKBU-HPML)
+      exist. No endpoints were fabricated; only live-checked URLs are recorded below.
+    endpoints:
+      - url: https://www.hkbu.edu.hk/
+        status: 200
+        note: Official university website (live).
+      - url: https://scholars.hkbu.edu.hk/ws/api/
+        status: 200
+        note: Pure Web Service API base; landing/docs reachable.
+      - url: https://scholars.hkbu.edu.hk/ws/api/openapi.yaml
+        status: 200
+        note: Public OpenAPI 3.0.1 contract for the Pure API.
+      - url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+        status: 200
+        note: Interactive RapiDoc documentation for the Pure API.
+      - url: https://scholars.hkbu.edu.hk/ws/api/524/
+        status: 401
+        note: Versioned Pure data endpoint requires API key (expected).
+      - url: https://scholars.hkbu.edu.hk/ws/oai?verb=Identify
+        status: 401
+        note: OAI-PMH endpoint present but access-restricted (401).
+      - url: https://scholars.hkbu.edu.hk/
+        status: 200
+        note: HKBU Scholars research portal (Pure-powered).
+      - url: https://mapp-api.hkbu.edu.hk/html/app_privacy_policy.html
+        status: 200
+        note: Mobile app backend host; serves app privacy notice, no dev docs.
+      - url: https://research.hkbu.edu.hk/
+        status: 200
+        note: HKBU research website (informational).
+      - url: https://library.hkbu.edu.hk/
+        status: 200
+        note: Library site; no public API documentation surfaced.
+      - url: https://data-hub.hkbu.edu.hk/
+        status: 503
+        note: OIRP Data Hub unavailable at review time (503).
+      - url: https://digital.lib.hkbu.edu.hk/
+        status: 403
+        note: Digital scholarship portal returned 403 to automated client.
+      - url: https://repository.hkbu.edu.hk/
+        status: 0
+        note: Institutional repository host did not resolve from this network.
+      - url: https://github.com/HKBUNLP
+        status: 200
+        note: Research-group GitHub org (NLP), not an institution-wide org.
