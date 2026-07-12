@@ -1,0 +1,28 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.hkbu.edu.hk
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov  1 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: scholars.hkbu.edu.hk
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  5 04:24:50 2026 GMT
+  hsts: true
+  hsts_max_age: 2592000
+- host: mapp-api.hkbu.edu.hk
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 26 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 86400
+domains:
+- domain: hkbu.edu.hk
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false
