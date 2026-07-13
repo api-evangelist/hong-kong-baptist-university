@@ -1,0 +1,14 @@
+{
+  "repo": "hong-kong-baptist-university",
+  "feeds": [
+    {
+      "source": "https://www.hkbu.edu.hk/en/whats-new.html",
+      "feed_url": "https://www.hkbu.edu.hk/en/whats-new.html",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 10
+}
