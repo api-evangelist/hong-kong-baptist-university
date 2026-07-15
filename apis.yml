@@ -86,6 +86,8 @@ apis:
       - type: Documentation
         url: https://mapp-api.hkbu.edu.hk/html/app_privacy_policy.html
 common:
+  - type: AgenticAccess
+    url: agentic-access/hong-kong-baptist-university-agentic-access.yml
   - type: DomainSecurity
     url: security/hong-kong-baptist-university-domain-security.yml
   - type: Authentication
