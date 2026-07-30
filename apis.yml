@@ -13,9 +13,22 @@ description: >-
   developer portal or organization-wide GitHub org; public code is published by
   individual research groups.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hong-kong-baptist-university.png
 url: https://raw.githubusercontent.com/api-evangelist/hong-kong-baptist-university/refs/heads/main/apis.yml
 tags:
   - Education
@@ -29,62 +42,1221 @@ created: '2026-06-03'
 modified: '2026-06-03'
 specificationVersion: '0.19'
 apis:
-  - aid: hong-kong-baptist-university:pure-research-api
-    name: HKBU Scholars Pure Web Service API
-    description: >-
-      REST web service API for the HKBU Scholars research portal, powered by Elsevier
-      Pure. Exposes the Pure data model (research outputs, persons, organisations,
-      projects, activities, and related metadata) as a graph of interconnected
-      resources over standard HTTP methods. The OpenAPI 3.0.1 contract is publicly
-      retrievable and interactive RapiDoc documentation is served from the same host;
-      data endpoints require an API key (return HTTP 401 without one).
-    humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
-    baseURL: https://scholars.hkbu.edu.hk/ws/api/
-    tags: [ Research, Research Information, Pure, Metadata, Scholarly ]
-    properties:
-      - type: Documentation
-        url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
-      - type: OpenAPI
-        url: https://scholars.hkbu.edu.hk/ws/api/openapi.yaml
-      - type: OpenAPI
-        url: openapi/hong-kong-baptist-university-pure-research-api.yaml
-      - type: Authentication
-        url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
-      - type: JSONSchema
-        url: json-schema/hong-kong-baptist-university-research-output-schema.json
-      - type: JSONSchema
-        url: json-schema/hong-kong-baptist-university-person-schema.json
-      - type: JSONSchema
-        url: json-schema/hong-kong-baptist-university-organization-schema.json
-      - type: x-json-structure
-        url: json-structure/hong-kong-baptist-university-research-output-structure.json
-      - type: x-json-structure
-        url: json-structure/hong-kong-baptist-university-person-structure.json
-      - type: x-json-structure
-        url: json-structure/hong-kong-baptist-university-organization-structure.json
-      - type: x-example
-        url: examples/hong-kong-baptist-university-list-research-outputs-example.json
-      - type: x-example
-        url: examples/hong-kong-baptist-university-list-persons-example.json
-      - type: x-spectral-rules
-        url: rules/hong-kong-baptist-university-rules.yml
-      - type: x-vocabulary
-        url: vocabulary/hong-kong-baptist-university-vocabulary.yml
-      - type: x-json-ld-context
-        url: json-ld/hong-kong-baptist-university-context.jsonld
-  - aid: hong-kong-baptist-university:mobile-app-backend
-    name: HKBU Mobile App Backend (gated)
-    description: >-
-      Backend host serving the official HKBU mobile application (mapp-api.hkbu.edu.hk).
-      The host resolves and serves app support content such as the app privacy notice,
-      but there is no public developer documentation, OpenAPI spec, or self-service
-      sign-up; the API is intended for the first-party mobile client only. Listed for
-      completeness; no endpoints are documented or independently verified.
-    humanURL: https://mapp-api.hkbu.edu.hk/html/app_privacy_policy.html
-    tags: [ Mobile, Backend, Gated ]
-    properties:
-      - type: Documentation
-        url: https://mapp-api.hkbu.edu.hk/html/app_privacy_policy.html
+- aid: hong-kong-baptist-university:mobile-app-backend
+  name: HKBU Mobile App Backend (gated)
+  description: >-
+    Backend host serving the official HKBU mobile application (mapp-api.hkbu.edu.hk). The host resolves
+    and serves app support content such as the app privacy notice, but there is no public developer documentation,
+    OpenAPI spec, or self-service sign-up; the API is intended for the first-party mobile client only.
+    Listed for completeness; no endpoints are documented or independently verified.
+  humanURL: https://mapp-api.hkbu.edu.hk/html/app_privacy_policy.html
+  tags:
+  - Mobile
+  - Backend
+  - Gated
+  properties:
+  - type: Documentation
+    url: https://mapp-api.hkbu.edu.hk/html/app_privacy_policy.html
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-activity-api
+  name: Hong Kong Baptist University activity API
+  description: The activity API from Hong Kong Baptist University — 38 operation(s) for activity.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - activity
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-activity-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-application-api
+  name: Hong Kong Baptist University application API
+  description: The application API from Hong Kong Baptist University — 36 operation(s) for application.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - application
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-application-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-authorcollaboration-api
+  name: Hong Kong Baptist University authorCollaboration API
+  description: >-
+    The authorCollaboration API from Hong Kong Baptist University — 9 operation(s) for authorcollaboration.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - authorCollaboration
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-authorcollaboration-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-award-api
+  name: Hong Kong Baptist University award API
+  description: The award API from Hong Kong Baptist University — 36 operation(s) for award.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - award
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-award-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-classificationscheme-api
+  name: Hong Kong Baptist University classificationScheme API
+  description: >-
+    The classificationScheme API from Hong Kong Baptist University — 7 operation(s) for classificationscheme.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - classificationScheme
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-classificationscheme-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-concept-api
+  name: Hong Kong Baptist University concept API
+  description: The concept API from Hong Kong Baptist University — 4 operation(s) for concept.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - concept
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-concept-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-course-api
+  name: Hong Kong Baptist University course API
+  description: The course API from Hong Kong Baptist University — 27 operation(s) for course.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - course
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-course-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-dataset-api
+  name: Hong Kong Baptist University dataSet API
+  description: The dataSet API from Hong Kong Baptist University — 29 operation(s) for dataset.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - dataSet
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-dataset-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-education-api
+  name: Hong Kong Baptist University education API
+  description: The education API from Hong Kong Baptist University — 14 operation(s) for education.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - education
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-education-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-equipment-api
+  name: Hong Kong Baptist University equipment API
+  description: The equipment API from Hong Kong Baptist University — 26 operation(s) for equipment.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - equipment
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-equipment-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-ethicalreview-api
+  name: Hong Kong Baptist University ethicalReview API
+  description: >-
+    The ethicalReview API from Hong Kong Baptist University — 22 operation(s) for ethicalreview.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - ethicalReview
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-ethicalreview-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-event-api
+  name: Hong Kong Baptist University event API
+  description: The event API from Hong Kong Baptist University — 21 operation(s) for event.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - event
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-event-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-externalorganization-api
+  name: Hong Kong Baptist University externalOrganization API
+  description: >-
+    The externalOrganization API from Hong Kong Baptist University — 29 operation(s) for externalorganization.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - externalOrganization
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-externalorganization-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-externalperson-api
+  name: Hong Kong Baptist University externalPerson API
+  description: >-
+    The externalPerson API from Hong Kong Baptist University — 22 operation(s) for externalperson.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - externalPerson
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-externalperson-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-fundingopportunity-api
+  name: Hong Kong Baptist University fundingOpportunity API
+  description: >-
+    The fundingOpportunity API from Hong Kong Baptist University — 21 operation(s) for fundingopportunity.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - fundingOpportunity
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-fundingopportunity-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-impact-api
+  name: Hong Kong Baptist University impact API
+  description: The impact API from Hong Kong Baptist University — 31 operation(s) for impact.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - impact
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-impact-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-journal-api
+  name: Hong Kong Baptist University journal API
+  description: The journal API from Hong Kong Baptist University — 22 operation(s) for journal.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - journal
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-journal-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-keywordgroupconfiguration-api
+  name: Hong Kong Baptist University keywordGroupConfiguration API
+  description: >-
+    The keywordGroupConfiguration API from Hong Kong Baptist University — 7 operation(s) for keywordgroupconfiguration.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - keywordGroupConfiguration
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-keywordgroupconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-milestone-api
+  name: Hong Kong Baptist University milestone API
+  description: The milestone API from Hong Kong Baptist University — 24 operation(s) for milestone.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - milestone
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-milestone-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-organization-api
+  name: Hong Kong Baptist University organization API
+  description: >-
+    The organization API from Hong Kong Baptist University — 33 operation(s) for organization.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - organization
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-organization-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-person-api
+  name: Hong Kong Baptist University person API
+  description: The person API from Hong Kong Baptist University — 57 operation(s) for person.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - person
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-person-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-pressmedia-api
+  name: Hong Kong Baptist University pressMedia API
+  description: The pressMedia API from Hong Kong Baptist University — 24 operation(s) for pressmedia.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - pressMedia
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-pressmedia-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-prize-api
+  name: Hong Kong Baptist University prize API
+  description: The prize API from Hong Kong Baptist University — 28 operation(s) for prize.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - prize
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-prize-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-project-api
+  name: Hong Kong Baptist University project API
+  description: The project API from Hong Kong Baptist University — 33 operation(s) for project.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - project
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-project-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-publisher-api
+  name: Hong Kong Baptist University publisher API
+  description: The publisher API from Hong Kong Baptist University — 18 operation(s) for publisher.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - publisher
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-publisher-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-researchoutput-api
+  name: Hong Kong Baptist University researchOutput API
+  description: >-
+    The researchOutput API from Hong Kong Baptist University — 66 operation(s) for researchoutput.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - researchOutput
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-researchoutput-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-role-api
+  name: Hong Kong Baptist University role API
+  description: The role API from Hong Kong Baptist University — 2 operation(s) for role.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - role
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-role-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-semester-api
+  name: Hong Kong Baptist University semester API
+  description: The semester API from Hong Kong Baptist University — 8 operation(s) for semester.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - semester
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-semester-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-specialization-api
+  name: Hong Kong Baptist University specialization API
+  description: >-
+    The specialization API from Hong Kong Baptist University — 8 operation(s) for specialization.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - specialization
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-specialization-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-studentproject-api
+  name: Hong Kong Baptist University studentProject API
+  description: >-
+    The studentProject API from Hong Kong Baptist University — 26 operation(s) for studentproject.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - studentProject
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-studentproject-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-studentthesis-api
+  name: Hong Kong Baptist University studentThesis API
+  description: >-
+    The studentThesis API from Hong Kong Baptist University — 26 operation(s) for studentthesis.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - studentThesis
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-studentthesis-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-thesaurus-api
+  name: Hong Kong Baptist University thesaurus API
+  description: The thesaurus API from Hong Kong Baptist University — 5 operation(s) for thesaurus.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - thesaurus
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-thesaurus-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
+- aid: hong-kong-baptist-university:hong-kong-baptist-university-user-api
+  name: Hong Kong Baptist University user API
+  description: The user API from Hong Kong Baptist University — 7 operation(s) for user.
+  humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  baseURL: https://scholars.hkbu.edu.hk/ws/api/
+  tags:
+  - user
+  properties:
+  - type: OpenAPI
+    url: openapi/hong-kong-baptist-university-user-api-openapi.yml
+  - type: Documentation
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: Authentication
+    url: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-research-output-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-person-schema.json
+  - type: JSONSchema
+    url: json-schema/hong-kong-baptist-university-organization-schema.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-research-output-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-person-structure.json
+  - type: x-json-structure
+    url: json-structure/hong-kong-baptist-university-organization-structure.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-research-outputs-example.json
+  - type: x-example
+    url: examples/hong-kong-baptist-university-list-persons-example.json
+  - type: x-spectral-rules
+    url: rules/hong-kong-baptist-university-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/hong-kong-baptist-university-vocabulary.yml
+  - type: x-json-ld-context
+    url: json-ld/hong-kong-baptist-university-context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/hong-kong-baptist-university-agentic-access.yml
