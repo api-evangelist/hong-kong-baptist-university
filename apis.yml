@@ -63,6 +63,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Activity
+  tags_raw:
   - activity
   properties:
   - type: OpenAPI
@@ -99,6 +101,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Application
+  tags_raw:
   - application
   properties:
   - type: OpenAPI
@@ -135,7 +139,8 @@ apis:
     The authorCollaboration API from Hong Kong Baptist University — 9 operation(s) for authorcollaboration.
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
-  tags:
+  tags: []
+  tags_raw:
   - authorCollaboration
   properties:
   - type: OpenAPI
@@ -208,7 +213,8 @@ apis:
     The classificationScheme API from Hong Kong Baptist University — 7 operation(s) for classificationscheme.
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
-  tags:
+  tags: []
+  tags_raw:
   - classificationScheme
   properties:
   - type: OpenAPI
@@ -317,6 +323,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Dataset
+  tags_raw:
   - dataSet
   properties:
   - type: OpenAPI
@@ -353,6 +361,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Education
+  tags_raw:
   - education
   properties:
   - type: OpenAPI
@@ -389,6 +399,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Equipment
+  tags_raw:
   - equipment
   properties:
   - type: OpenAPI
@@ -425,7 +437,8 @@ apis:
     The ethicalReview API from Hong Kong Baptist University — 22 operation(s) for ethicalreview.
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
-  tags:
+  tags: []
+  tags_raw:
   - ethicalReview
   properties:
   - type: OpenAPI
@@ -462,6 +475,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Event
+  tags_raw:
   - event
   properties:
   - type: OpenAPI
@@ -498,7 +513,8 @@ apis:
     The externalOrganization API from Hong Kong Baptist University — 29 operation(s) for externalorganization.
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
-  tags:
+  tags: []
+  tags_raw:
   - externalOrganization
   properties:
   - type: OpenAPI
@@ -535,7 +551,8 @@ apis:
     The externalPerson API from Hong Kong Baptist University — 22 operation(s) for externalperson.
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
-  tags:
+  tags: []
+  tags_raw:
   - externalPerson
   properties:
   - type: OpenAPI
@@ -572,7 +589,8 @@ apis:
     The fundingOpportunity API from Hong Kong Baptist University — 21 operation(s) for fundingopportunity.
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
-  tags:
+  tags: []
+  tags_raw:
   - fundingOpportunity
   properties:
   - type: OpenAPI
@@ -609,6 +627,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Impact
+  tags_raw:
   - impact
   properties:
   - type: OpenAPI
@@ -681,7 +701,8 @@ apis:
     The keywordGroupConfiguration API from Hong Kong Baptist University — 7 operation(s) for keywordgroupconfiguration.
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
-  tags:
+  tags: []
+  tags_raw:
   - keywordGroupConfiguration
   properties:
   - type: OpenAPI
@@ -755,6 +776,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Organization
+  tags_raw:
   - organization
   properties:
   - type: OpenAPI
@@ -791,6 +814,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Persons
+  tags_raw:
   - person
   properties:
   - type: OpenAPI
@@ -826,7 +851,8 @@ apis:
   description: The pressMedia API from Hong Kong Baptist University — 24 operation(s) for pressmedia.
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
-  tags:
+  tags: []
+  tags_raw:
   - pressMedia
   properties:
   - type: OpenAPI
@@ -899,6 +925,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Project
+  tags_raw:
   - project
   properties:
   - type: OpenAPI
@@ -935,6 +963,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Publishers
+  tags_raw:
   - publisher
   properties:
   - type: OpenAPI
@@ -971,7 +1001,8 @@ apis:
     The researchOutput API from Hong Kong Baptist University — 66 operation(s) for researchoutput.
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
-  tags:
+  tags: []
+  tags_raw:
   - researchOutput
   properties:
   - type: OpenAPI
@@ -1008,6 +1039,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - Role
+  tags_raw:
   - role
   properties:
   - type: OpenAPI
@@ -1117,7 +1150,8 @@ apis:
     The studentProject API from Hong Kong Baptist University — 26 operation(s) for studentproject.
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
-  tags:
+  tags: []
+  tags_raw:
   - studentProject
   properties:
   - type: OpenAPI
@@ -1154,7 +1188,8 @@ apis:
     The studentThesis API from Hong Kong Baptist University — 26 operation(s) for studentthesis.
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
-  tags:
+  tags: []
+  tags_raw:
   - studentThesis
   properties:
   - type: OpenAPI
@@ -1227,6 +1262,8 @@ apis:
   humanURL: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
   baseURL: https://scholars.hkbu.edu.hk/ws/api/
   tags:
+  - User
+  tags_raw:
   - user
   properties:
   - type: OpenAPI
