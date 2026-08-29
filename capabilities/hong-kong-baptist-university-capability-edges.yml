@@ -1,0 +1,27 @@
+slug: hong-kong-baptist-university
+provider: Hong Kong Baptist University
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: user
+  spec_file: hong-kong-baptist-university-user-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.78
+  evidence: 'POST /users/{uuid}/actions/reset-password  user_resetPassword_1  Reset user password; PUT
+    /users/{uuid}/roles  user_update_roles_for_user_1  Updates roles; schemas: UserRoles, GlobalRoleAssignment,
+    LocalRoleAssignment'
+  reason: Operations administer user accounts, password resets and global/local role assignments — account
+    and entitlement administration, i.e. Identity & Access Management, rather than any research-domain
+    capability.

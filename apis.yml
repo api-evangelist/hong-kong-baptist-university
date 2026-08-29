@@ -1307,6 +1307,9 @@ apis:
   - type: x-json-ld-context
     url: json-ld/hong-kong-baptist-university-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/hong-kong-baptist-university-capability-edges.yml
+    name: Hong Kong Baptist University Business Capability Map
   - type: AgenticAccess
     url: agentic-access/hong-kong-baptist-university-agentic-access.yml
   - type: DomainSecurity
