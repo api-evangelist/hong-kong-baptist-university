@@ -3,7 +3,7 @@ provider: Hong Kong Baptist University
 generated_by: planning/capability-mapping/scripts/classify_capabilities.py
 model: claude-opus-5
 frame:
-- Software & Technology
+- Education
 min_confidence: 0.7
 capability_model:
   source: https://github.com/vincentmakes/turbo-ea-capabilities
@@ -11,17 +11,141 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 1
+edge_count: 13
 edges:
+- tag: researchOutput
+  spec_file: hong-kong-baptist-university-researchoutput-api-openapi.yml
+  capability_id: BC-4780.40
+  capability_id_l1: BC-4780
+  capability_name: Scholarly Output & Publication Management
+  confidence: 0.95
+  evidence: GET /research-outputs  researchOutput_list_1  Lists all research outputs; GET /research-outputs/allowed-article-processing-charge-currencies;
+    schema ResearchOutputPeerReviewConfiguration
+  reason: Direct management of publications and other research outputs including contributor roles, APCs,
+    access/licence types and peer-review configuration — unambiguously scholarly output and publication
+    management.
+- tag: award
+  spec_file: hong-kong-baptist-university-award-api-openapi.yml
+  capability_id: BC-4780.20
+  capability_id_l1: BC-4780
+  capability_name: Research Grant Management
+  confidence: 0.9
+  evidence: GET /awards/allowed-budget-account-classifications, GET /awards/allowed-funding-classifications,
+    GET /awards/allowed-awardholder-roles; schemas AwardCluster, ContractRef, MilestoneListResult, SystemCurrencyAmount
+  reason: Awarded research grants with funding classifications, budget accounts, contracts and milestones
+    — post-award research grant administration.
+- tag: ethicalReview
+  spec_file: hong-kong-baptist-university-ethicalreview-api-openapi.yml
+  capability_id: BC-4780.30
+  capability_id_l1: BC-4780
+  capability_name: Research Ethics & Integrity Oversight
+  confidence: 0.9
+  evidence: GET /ethical-reviews/allowed-types "A list of allowed ethical review types"; schemas EthicalReviewAwardAssociation,
+    EthicalReviewApplicationAssociation, AbstractClassifiedEthicalReviewPersonAssociation
+  reason: Ethical review records tied to research applications and awards with reviewer person roles —
+    research ethics oversight.
+- tag: application
+  spec_file: hong-kong-baptist-university-application-api-openapi.yml
+  capability_id: BC-4780.20
+  capability_id_l1: BC-4780
+  capability_name: Research Grant Management
+  confidence: 0.85
+  evidence: GET /applications/allowed-applicant-roles; GET /applications/allowed-budget-account-classifications;
+    schemas AwardRef, YearlyBudget, SystemCurrencyAmount
+  reason: Pure applications are research funding applications with applicants, budgets, statuses and resulting
+    awards — the pre-award stage of research grant lifecycle management.
+- tag: impact
+  spec_file: hong-kong-baptist-university-impact-api-openapi.yml
+  capability_id: BC-4780.60
+  capability_id_l1: BC-4780
+  capability_name: Research Impact & Assessment
+  confidence: 0.85
+  evidence: GET /impacts/allowed-impact-evidence-indicators  'A list of allowed impact evidence indicators';
+    GET /impacts/allowed-impact-categories; schema ImpactResearchOutputAssociation
+  reason: Records of research impact with evidence indicators, levels and links to research outputs —
+    this is institutional research impact capture and assessment (e.g. for REF-style exercises), not marketing
+    or IT impact.
+- tag: fundingOpportunity
+  spec_file: hong-kong-baptist-university-fundingopportunity-api-openapi.yml
+  capability_id: BC-4780.20
+  capability_id_l1: BC-4780
+  capability_name: Research Grant Management
+  confidence: 0.82
+  evidence: GET /funding-opportunities  fundingOpportunity_list_1  Lists all funding opportunities; schemas
+    FundingOpportunity, CurrencyAmount, allowed-classified-eligibility-types
+  reason: Pure's funding-opportunity records catalogue research funding calls and their eligibility, which
+    is the pre-award opportunity-identification part of research grant lifecycle management in a university
+    research information system.
+- tag: dataSet
+  spec_file: hong-kong-baptist-university-dataset-api-openapi.yml
+  capability_id: BC-4780.40
+  capability_id_l1: BC-4780
+  capability_name: Scholarly Output & Publication Management
+  confidence: 0.8
+  evidence: GET /data-sets/allowed-doi-access-types, GET /data-sets/allowed-doi-license-types; schemas
+    DataSetDoi, DataSetResearchOutputAssociation, ResearchOutputRef
+  reason: Research datasets registered with DOIs, licences, contributors and links to research outputs
+    — stewardship of scholarly output and persistent identifiers.
 - tag: user
   spec_file: hong-kong-baptist-university-user-api-openapi.yml
   capability_id: BC-620.20
   capability_id_l1: BC-620
   capability_name: Identity & Access Management
   confidence: 0.78
-  evidence: 'POST /users/{uuid}/actions/reset-password  user_resetPassword_1  Reset user password; PUT
-    /users/{uuid}/roles  user_update_roles_for_user_1  Updates roles; schemas: UserRoles, GlobalRoleAssignment,
-    LocalRoleAssignment'
-  reason: Operations administer user accounts, password resets and global/local role assignments — account
-    and entitlement administration, i.e. Identity & Access Management, rather than any research-domain
-    capability.
+  evidence: PUT /users 'Create user'; POST /users/{uuid}/actions/reset-password 'Reset user password';
+    PUT /users/{uuid}/roles 'Updates roles'; schemas UserRoles, GlobalRoleAssignment
+  reason: Account lifecycle, password reset and role assignment for system users — plainly identity and
+    access management, not any education-domain capability.
+- tag: project
+  spec_file: hong-kong-baptist-university-project-api-openapi.yml
+  capability_id: BC-4780.20
+  capability_id_l1: BC-4780
+  capability_name: Research Grant Management
+  confidence: 0.75
+  evidence: GET /projects  project_list_1  Lists all projects; GET /projects/allowed-collaborator-types;
+    schemas AwardCluster, ApplicationCluster, ApplicationRef
+  reason: Pure projects are research projects tied to funding applications and award clusters with collaborators,
+    which is core research grant and project administration in a university research information system.
+- tag: activity
+  spec_file: hong-kong-baptist-university-activity-api-openapi.yml
+  capability_id: BC-4780
+  capability_id_l1: BC-4780
+  capability_name: Research & Scholarship Management
+  confidence: 0.72
+  evidence: GET /activities  activity_list  Lists all activities; GET /activities/allowed-editorial-work-person-roles;
+    GET /activities/allowed-consultancy-person-roles; schemas ImpactRef, PrizeRef, ResearchOutputRef
+  reason: Pure 'activities' record academic engagement such as editorial work, consultancy, prizes and
+    impact linked to research outputs — clearly research-information management, but it spans several
+    sub-capabilities so only the L1 is asserted.
+- tag: course
+  spec_file: hong-kong-baptist-university-course-api-openapi.yml
+  capability_id: BC-4700
+  capability_id_l1: BC-4700
+  capability_name: Curriculum & Programme Management
+  confidence: 0.7
+  evidence: GET /courses/allowed-course-occurrence-semester-types "A list of allowed semester types for
+    course occurrences"; GET /courses/allowed-credit-types; GET /courses/allowed-course-occurrence-lecturer-role-types
+  reason: Course records with credits, semester occurrences and lecturer roles are academic course/curriculum
+    records; ambiguous between course design and catalogue publication, so L1 only.
+- tag: journal
+  spec_file: hong-kong-baptist-university-journal-api-openapi.yml
+  capability_id: BC-4780.40
+  capability_id_l1: BC-4780
+  capability_name: Scholarly Output & Publication Management
+  confidence: 0.7
+  evidence: GET /journals  journal_list_1  Lists all journals; schemas JournalTitle, AdditionalISSN, PublisherRef,
+    MetricValue
+  reason: Journal entities in Pure are bibliographic reference data (ISSN, publisher, journal metrics)
+    supporting stewardship of the institution's scholarly publication record; closest fit is scholarly
+    output and publication management, though it is reference/master data in nature.
+- tag: milestone
+  spec_file: hong-kong-baptist-university-milestone-api-openapi.yml
+  capability_id: BC-4780.20
+  capability_id_l1: BC-4780
+  capability_name: Research Grant Management
+  confidence: 0.7
+  evidence: GET /milestones/award/allowed-academic-roles  'A list of allowed academic roles for milestones
+    which have a related award'; schemas AwardRef, ApplicationRef, ContractRef, EthicalReviewRef
+  reason: Milestones are attached to research applications, awards, contracts and ethical reviews, i.e.
+    tracking of obligations across the research grant/award lifecycle; some chance a reviewer would place
+    it under generic project management, hence moderate confidence.
