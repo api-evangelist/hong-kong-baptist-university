@@ -1,16 +1,111 @@
-generated: '2026-07-11'
-method: derived
-source: openapi/hong-kong-baptist-university-pure-research-api.yaml
+generated: '2026-08-30'
+method: probed
+source: >-
+  Live credential probes of HKBU-operated hosts on 2026-08-30. This file replaces the
+  2026-07-11 version, which was derived from Elsevier's Pure OpenAPI and therefore described
+  Elsevier's authentication, not HKBU's.
+note: >-
+  HKBU publishes no security schemes in any contract of its own, because it publishes no
+  contract of its own. Every scheme below was established by sending a request and reading the
+  rejection. Nothing here is inferred from documentation.
 summary:
   types:
   - apiKey
+  - oauth2
+  - saml
+  - token
   api_key_in:
   - header
 schemes:
-- name: api-key
+- name: genai-api-key
   type: apiKey
   in: header
   parameter: api-key
-  description: Security mechanism for the API
-  sources:
-  - openapi/hong-kong-baptist-university-pure-research-api.yaml
+  operator: institution
+  surface: hong-kong-baptist-university:genai-platform-api
+  description: >-
+    The HKBU GenAI Platform gateway takes an Azure-OpenAI-style api-key request header. A POST
+    to https://genai.hkbu.edu.hk/general/rest/deployments/gpt-4o-mini/chat/completions
+    ?api-version=2024-05-01-preview with no credential returns HTTP 401
+    {"message":"API key is missing or invalid.","error":"Unauthorized","statusCode":401}. The
+    same POST carrying an api-key header returns a different HTTP 401,
+    {"message":"API key validation failed due to an internal error.",...}, which is what
+    identifies api-key as the credential channel rather than Authorization or x-api-key —
+    both of those produce the "missing or invalid" message instead. No self-service issuance
+    path is published; keys are obtained through institutional affiliation.
+  evidence:
+  - url: https://genai.hkbu.edu.hk/general/rest/deployments/gpt-4o-mini/chat/completions?api-version=2024-05-01-preview
+    status: 401
+- name: moodle-lti-oauth2-client-credentials
+  type: oauth2
+  flow: clientCredentials
+  operator: institution
+  surface: hong-kong-baptist-university:moodle-lti-platform
+  tokenUrl: https://buelearning.hkbu.edu.hk/mod/lti/token.php
+  jwksUrl: https://buelearning.hkbu.edu.hk/mod/lti/certs.php
+  description: >-
+    IMS LTI 1.3 Advantage service authentication. The token endpoint returns HTTP 400
+    {"error":"invalid_request"} to a bare call, and the platform key set at /mod/lti/certs.php
+    returns HTTP 200 with a single RSA RS256 signing key (kid 233f84e26d75aa18234e). Tools
+    registered with HKBU exchange a signed JWT assertion for an access token here.
+  evidence:
+  - url: https://buelearning.hkbu.edu.hk/mod/lti/token.php
+    status: 400
+  - url: https://buelearning.hkbu.edu.hk/mod/lti/certs.php
+    status: 200
+- name: moodle-webservice-token
+  type: token
+  in: query
+  parameter: wstoken
+  operator: institution
+  surface: hong-kong-baptist-university:moodle-lti-platform
+  description: >-
+    Moodle Web Services is enabled on the HKBU Moodle. A call to
+    /webservice/rest/server.php?wsfunction=core_webservice_get_site_info&moodlewsrestformat=json
+    with no token returns HTTP 200 carrying Moodle's own error envelope,
+    {"exception":"core\\exception\\moodle_exception","errorcode":"invalidtoken",
+    "message":"Invalid token - token not found"} — an enabled service refusing a credential,
+    not a disabled one 404ing. Tokens are issued per user through institutional login.
+  evidence:
+  - url: https://buelearning.hkbu.edu.hk/webservice/rest/server.php?wsfunction=core_webservice_get_site_info&moodlewsrestformat=json
+    status: 200
+- name: hkbu-shibboleth-idp
+  type: saml
+  operator: institution
+  surface: hong-kong-baptist-university:identity-federation
+  entityId: https://buidp01.hkbu.edu.hk/idp/shibboleth
+  description: >-
+    HKBU's own SAML 2.0 / Shibboleth identity provider is the institution's federated
+    authentication surface, and it is the one credential system here whose metadata is public.
+    Bindings: SAML2 HTTP-POST, HTTP-POST-SimpleSign and HTTP-Redirect for SSO; SOAP on port 8443
+    for ArtifactResolution and AttributeQuery; SAML 1.1 SOAP equivalents; HTTP-Redirect
+    SingleLogout. Attribute release is scoped to hkbu.edu.hk. Registered in eduGAIN by the Hong
+    Kong Access Federation. Technical contact published in the metadata: jackkwok@hkbu.edu.hk.
+  evidence:
+  - url: https://buidp01.hkbu.edu.hk/idp/shibboleth
+    status: 200
+- name: pure-api-key
+  type: apiKey
+  in: header
+  parameter: api-key
+  operator: tenant
+  credited: false
+  surface: hong-kong-baptist-university:scholars-pure-tenancy
+  description: >-
+    The Elsevier Pure Web Service running under HKBU's name at scholars.hkbu.edu.hk/ws/api is
+    api-key gated — /ws/api/524/openapi.yaml returns HTTP 401 without one. Recorded because the
+    tenancy is a real institutional fact, and explicitly NOT credited to HKBU: the scheme,
+    the contract and the implementation are Elsevier's.
+  evidence:
+  - url: https://scholars.hkbu.edu.hk/ws/api/524/openapi.yaml
+    status: 401
+negative_probes:
+- url: https://genai.hkbu.edu.hk/.well-known/openid-configuration
+  status: 404
+  note: No OIDC discovery document; the GenAI gateway is api-key only.
+- url: https://genai.hkbu.edu.hk/scim/v2/Users
+  status: 404
+  note: No SCIM provisioning endpoint.
+- url: https://buelearning.hkbu.edu.hk/scim/v2/Users
+  status: 404
+  note: No SCIM provisioning endpoint on the LMS either.
