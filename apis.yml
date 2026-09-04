@@ -48,7 +48,7 @@ accessModel:
   - probed
   generated: '2026-08-30'
   method: probed
-position: Consumer
+position: Consuming
 access: Internal
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hong-kong-baptist-university.png
 url: https://raw.githubusercontent.com/api-evangelist/hong-kong-baptist-university/refs/heads/main/apis.yml
