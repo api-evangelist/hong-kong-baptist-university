@@ -196,6 +196,12 @@ apis:
   - Research Repository
   - Elsevier Pure
   - OAI-PMH
+  - Tenants
+  tags_raw:
+  - Research Information
+  - Research Repository
+  - Elsevier Pure
+  - OAI-PMH
   - Tenant
   properties:
   - type: Website
