@@ -4,7 +4,7 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Hong Kong Baptist University
 providerId: hong-kong-baptist-university
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-30'
 reconciled: false
 tags:
 - Education
@@ -12,21 +12,28 @@ tags:
 - University
 - Rate Limiting
 description: >-
-  Hong Kong Baptist University does not publish a unified public rate-limit table across its APIs. Open
-  metadata and harvesting endpoints (OAI-PMH, IIIF, library) may throttle large-scale
-  or automated harvesting; clients should harvest politely, honor Retry-After, and
-  contact the relevant service for bulk access.
-notes: Confirm per-service limits with each API's documentation; harvest responsibly.
+  Hong Kong Baptist University publishes no rate-limit documentation for any surface it operates.
+  Re-probed 2026-08-30: the GenAI Platform gateway, the Moodle LTI/web-services endpoints and the
+  mobile-app backend are all credential-gated and return no RateLimit-* or X-RateLimit-* headers to
+  an unauthenticated caller, so no limit could be observed. The Shibboleth IdP metadata document is
+  served anonymously with no throttling advertised. The only rate-limited surface under HKBU's name
+  is the Elsevier Pure Web Service at scholars.hkbu.edu.hk, whose limits are Elsevier's product
+  limits and are not credited to the institution. No limits are asserted here that were not observed.
+notes: >-
+  Revised 2026-08-30. The prior version named OAI-PMH, IIIF and library harvesting limits; HKBU
+  operates no IIIF or library harvesting surface, and its only OAI-PMH endpoint is Pure's and returns
+  401. Those claims were removed rather than restated.
 sources:
 - https://raw.githubusercontent.com/api-evangelist/hong-kong-baptist-university/refs/heads/main/apis.yml
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: Unpublished
   scope: client
-  metric: requests-per-minute
-  limit: see service documentation
-  notes: No published global limit; large harvests may be rate-limited.
+  metric: unknown
+  limit: not published
+  notes: >-
+    No rate limit is published or observable on any HKBU-operated surface. Probed 2026-08-30.
 policies:
 - name: Backoff Strategy
   description: Exponential backoff with jitter; honor Retry-After; harvest during off-peak hours.
