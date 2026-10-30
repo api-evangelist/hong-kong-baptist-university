@@ -1,4 +1,4 @@
-# Hong Kong Baptist University (hong-kong-baptist-university)
+# Hong Kong Baptist University
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,102 +64,116 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Hong Kong Baptist University (HKBU) is a publicly funded, UGC-supported research university in Hong Kong SAR. This repository catalogs HKBU's institution-operated, machine-readable footprint as an APIs.json provider profile. It was re-profiled on 2026-08-30 under the API Evangelist **university pipeline**, which settles *who operates* a surface before crediting any contract to the institution.
+Hong Kong Baptist University (HKBU) is a publicly funded, UGC-supported research university in Hong Kong SAR. Re-profiled on 2026-08-30 under the API Evangelist university pipeline, which settles WHO OPERATES each surface before crediting any contract. HKBU operates no central developer portal, no public API catalogue and no institution-wide GitHub organisation; github.com/hkbu exists but is empty, and the only active HKBU orgs are research labs (HKBUNLP, HKBU-HPML). What HKBU does operate itself, verified by live probe, is four things: a Shibboleth/SAML 2.0 identity provider at buidp01.hkbu.edu.hk registered in eduGAIN through the Hong Kong Access Federation since 2018 and serving 12KB of signed SAML metadata anonymously; a self-built GenAI Platform whose Azure-OpenAI-shaped chat-completions and embeddings endpoints answer on genai.hkbu.edu.hk behind an api-key header, undocumented publicly; a self-hosted Moodle at buelearning.hkbu.edu.hk publishing a live IMS LTI 1.3 JWKS and OAuth2 token endpoint under HKBU's own signing keys; and a first-party mobile-app backend at mapp-api.hkbu.edu.hk with no public documentation. Everything that looks like an HKBU research API is not. The HKBU Scholars portal at scholars.hkbu.edu.hk is a CNAME to hkbu.elsevierpure.com — an Elsevier Pure tenancy. The 33 OpenAPI documents previously held in this repository were Elsevier's Pure Web Service contract 5.35.0 (info.contact pure-support@elsevier.com), the same document other Pure institutions ship, and have been removed along with everything derived from them. The data is HKBU's; the contract is Elsevier's, and it scores in Elsevier's repository, not here.
 
-- APIs.json: https://raw.githubusercontent.com/api-evangelist/hong-kong-baptist-university/refs/heads/main/apis.yml
-- Run with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=hong-kong-baptist-university-api-evangelist&utm_content=repo
+**Areas:** University · Higher Education · Education · Hong Kong · UGC-Funded · Identity Federation · Shibboleth · SAML · eduGAIN · LMS · LTI · Artificial Intelligence
 
-## Type
+## Hong Kong Baptist University on APIs.io
 
-- Index / university
-- Public Research University
-- Consumer, Internal
+Everything profiled for Hong Kong Baptist University is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/hong-kong-baptist-university/](https://apis.io/providers/hong-kong-baptist-university/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-University, Higher Education, Education, Hong Kong, UGC-Funded, Identity Federation, Shibboleth, SAML, eduGAIN, Learning Management, LTI, Artificial Intelligence, Research Information, Elsevier Pure
+- [HKBU Identity Federation (Shibboleth IdP / SAML 2.0 metadata)](https://apis.io/apis/hong-kong-baptist-university/identity-federation/) — HKBU's own SAML 2.0 identity provider, entityID https://buidp01.hkbu.edu.hk/idp/shibboleth, registered in eduGAIN by the Hong Kong Access Federation (HKAF)…
+- [HKBU GenAI Platform API (undocumented, key-gated)](https://apis.io/apis/hong-kong-baptist-university/genai-platform-api/) — HKBU runs its own generative-AI gateway at genai.hkbu.edu.hk, fronting third-party models (Anthropic, Google, Meta AI, OpenAI) for staff and students.…
+- [HKBU Moodle — IMS LTI 1.3 platform + web services](https://apis.io/apis/hong-kong-baptist-university/moodle-lti-platform/) — HKBU self-hosts Moodle at buelearning.hkbu.edu.hk on its own registrable domain. It publishes a live IMS LTI 1.3 Advantage tool-platform key set at…
+- [HKBU Mobile App Backend (gated)](https://apis.io/apis/hong-kong-baptist-university/mobile-app-backend/) — Backend host serving the official HKBU Mobile application (mapp-api.hkbu.edu.hk). The host resolves over TLS 1.3 with HSTS and serves app support content…
+- [HKBU Scholars — Elsevier Pure tenancy (tenant relationship, contract not HKBU's)](https://apis.io/apis/hong-kong-baptist-university/scholars-pure-tenancy/) — HKBU Scholars is HKBU's research information portal and institutional repository, and it is an Elsevier Pure tenancy: scholars.hkbu.edu.hk is a CNAME to…
 
-## What changed on 2026-08-30
+### Published properties
 
-The 33 OpenAPI documents this repository previously held were **Elsevier's**, not HKBU's. Every one was titled `Pure activity … API`, version `5.35.0`, with `info.contact: pure-support@elsevier.com` — the same contract other Elsevier Pure institutions ship. They read as institution-owned only because they are served from `scholars.hkbu.edu.hk`, which DNS shows is a **CNAME to `hkbu.elsevierpure.com`** (`repository.hkbu.edu.hk` is aliased onto the same target).
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-All 33, the pristine `_original`, and 81 further files derived from them were removed — **115 files**: 64 collections, 3 JSON Schemas, 3 JSON Structures, 2 examples, a JSON-LD context, a vocabulary, two Spectral rulesets, an agentic-access map, an authentication summary, a capability-edge map, and two refine reports. The records and DOIs are HKBU's; the contract is Elsevier's, and it scores in Elsevier's repository. **Do not re-add them.**
+#### Vocabulary (1)
 
-## APIs
+The provider's domain terms, defined.
 
-Every entry carries an `x-operator`.
+- [HKBU Scholars Pure Web Service Vocabulary](https://apis.io/vocabularies/hong-kong-baptist-university/hong-kong-baptist-university-vocabulary/)
 
-**Institution-operated (4)**
+#### Security (2)
 
-- **HKBU Identity Federation — Shibboleth IdP / SAML 2.0 metadata** (`x-operator: institution`) — entityID `https://buidp01.hkbu.edu.hk/idp/shibboleth`, registered in eduGAIN by the Hong Kong Access Federation since 2018-03-14, scope `hkbu.edu.hk`. Metadata served anonymously: HTTP 200, `application/xml`, 12,306 bytes, declaring an IDPSSODescriptor and an AttributeAuthorityDescriptor across nine SAML 2.0 / SAML 1.1 / Shibboleth 1.0 endpoints plus SingleLogout. The one machine-readable interface HKBU both authors and operates end to end.
-  - Metadata: https://buidp01.hkbu.edu.hk/idp/shibboleth
-- **HKBU GenAI Platform API (undocumented, key-gated)** (`x-operator: institution`) — an Azure-OpenAI-shaped gateway at `genai.hkbu.edu.hk/general/rest/deployments/{deployment}/chat/completions` and `/embeddings`, routed internally to `/api/v0/rest/*`. Unauthenticated POST returns 401 `{"message":"API key is missing or invalid."}`; a POST carrying an `api-key` header returns a distinct key-validation 401, identifying the credential channel. No OpenAPI and no public developer docs are published.
-  - Platform: https://genai.hkbu.edu.hk/
-- **HKBU Moodle — IMS LTI 1.3 platform + web services** (`x-operator: institution`) — self-hosted Moodle at `buelearning.hkbu.edu.hk` publishing a live LTI 1.3 JWKS at `/mod/lti/certs.php` (HTTP 200, one RSA RS256 key) and an OAuth2 client-credentials token endpoint at `/mod/lti/token.php`. Moodle Web Services is enabled and token-gated. The software is Moodle's and the interface shape is IMS Global's — no contract is credited to HKBU — but the deployment, domain and signing keys are HKBU's.
-  - JWKS: https://buelearning.hkbu.edu.hk/mod/lti/certs.php
-- **HKBU Mobile App Backend (gated)** (`x-operator: institution`) — `mapp-api.hkbu.edu.hk`, first-party mobile client only. No public docs, no OpenAPI, no signup.
-  - Reference: https://mapp-api.hkbu.edu.hk/html/app_privacy_policy.html
+Authentication, trust centre, and vulnerability disclosure.
 
-**Tenant (1)**
+- [Hong Kong Baptist University Authentication](https://apis.io/security/hong-kong-baptist-university/hong-kong-baptist-university-authentication/)
+- [Hong Kong Baptist University Domain Security](https://apis.io/security/hong-kong-baptist-university/hong-kong-baptist-university-domain-security/)
 
-- **HKBU Scholars — Elsevier Pure tenancy** (`x-operator: tenant`) — the research portal and institutional repository. `scholars.hkbu.edu.hk` CNAMEs to `hkbu.elsevierpure.com`. The Pure Web Service answers at `/ws/api` (versioned OpenAPI 401, RapiDoc console 200, OAI-PMH `/ws/oai` 401). The tenancy is a real institutional fact and is recorded as one; the contract is not saved here.
-  - Documentation: https://scholars.hkbu.edu.hk/ws/api/rapidoc.html
+#### Plans and pricing (1)
 
-## Domain standards (education regime)
+Published plans, tiers and prices.
 
-Recorded in [conformance/hong-kong-baptist-university-conformance.yml](conformance/hong-kong-baptist-university-conformance.yml), every entry backed by a URL and a status code.
+- [Hong Kong Baptist University Plans Pricing](https://apis.io/plans/hong-kong-baptist-university/hong-kong-baptist-university-plans-pricing/)
 
-| Standard | Conforms | Operator |
-|---|---|---|
-| `shibboleth` | yes | institution |
-| `saml` | yes | institution |
-| `lti` | yes | institution |
-| `crossref` | yes | institution — member 10204, prefix 10.24112, 1,763 DOIs |
-| `oai-pmh` | partial, 401 | tenant — **not credited** |
-| `scim`, `orcid`, `datacite`, `oneroster`, `ed-fi`, `caliper`, `qti` | no | — |
+#### Rate limits (1)
 
-## Artifacts
+Published request limits.
 
-- Conformance: [conformance/hong-kong-baptist-university-conformance.yml](conformance/hong-kong-baptist-university-conformance.yml)
-- Authentication: [authentication/hong-kong-baptist-university-authentication.yml](authentication/hong-kong-baptist-university-authentication.yml)
-- Domain Security: [security/hong-kong-baptist-university-domain-security.yml](security/hong-kong-baptist-university-domain-security.yml)
-- Plans & Pricing: [plans/hong-kong-baptist-university-plans-pricing.yml](plans/hong-kong-baptist-university-plans-pricing.yml)
-- Rate Limits: [rate-limits/hong-kong-baptist-university-rate-limits.yml](rate-limits/hong-kong-baptist-university-rate-limits.yml)
-- FinOps: [finops/hong-kong-baptist-university-finops.yml](finops/hong-kong-baptist-university-finops.yml)
-- Review: [review.yml](review.yml)
+- [Hong Kong Baptist University Rate Limits](https://apis.io/rate-limits/hong-kong-baptist-university/hong-kong-baptist-university-rate-limits/)
 
-There is no `openapi/` directory. HKBU publishes no contract of its own, and the only contract it served was Elsevier's.
+#### FinOps (1)
 
-## Timestamps
+What the API costs to run, by operation.
 
-- Created: 2026-06-03
-- Modified: 2026-08-30
+- [Hong Kong Baptist University Finops](https://apis.io/finops/hong-kong-baptist-university/hong-kong-baptist-university-finops/)
 
-## Common Properties
+## Where to find this API
 
-- Website: https://www.hkbu.edu.hk/
-- Blog: https://www.hkbu.edu.hk/en/whats-new.html
-- Identity Federation: https://buidp01.hkbu.edu.hk/idp/shibboleth
-- AI Tooling: https://genai.hkbu.edu.hk/
-- AI Policy: https://ar.hkbu.edu.hk/student-services/learning-and-teaching/learning-and-teaching-strategy-and-policies/principles-for-the-use-of-generative-ai-tools-in-teaching-and-learning-and-assessment
-- Research Repository (tenant): https://scholars.hkbu.edu.hk/
-- Institutional Data: https://data-hub.hkbu.edu.hk/
-- Terms of Service: https://www.hkbu.edu.hk/en/disclaimer.html
-- Privacy Policy: https://bupdpo.hkbu.edu.hk/policies-and-procedures/pps-pics/
-- Support: https://ito.hkbu.edu.hk/contact-us.html
-- GitHub: https://github.com/HKBUNLP (research-group org; `github.com/hkbu` exists but is empty)
-- LinkedIn: https://www.linkedin.com/school/hong-kong-baptist-university/
-- Twitter/X: https://twitter.com/hkbaptistu
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-## Notes
+- [Website](https://www.hkbu.edu.hk/)
+- [Support](https://ito.hkbu.edu.hk/contact-us.html)
+- [Blog](https://www.hkbu.edu.hk/en/whats-new.html)
+- [Terms of service](https://www.hkbu.edu.hk/en/disclaimer.html)
+- [Privacy policy](https://bupdpo.hkbu.edu.hk/policies-and-procedures/pps-pics/)
 
-- Every URL in this profile was re-probed on 2026-08-30 with a browser User-Agent. Nothing was fabricated, and status codes — not link presence — decided every entry.
-- `www.hkbu.edu.hk` **soft-404s**: `/en/terms-of-use.html`, `/en/privacy-policy.html` and `/en/about-hkbu.html` all return HTTP 200 with `<title>Page not found</title>`. Read the body, not the code. The real terms page is `/en/disclaimer.html`.
-- `digital.lib.hkbu.edu.hk` returns a 403 "Access Denied" page to every client tried, including a full browser User-Agent — blocked, not dead.
-- The OIRP Data Hub (`data-hub.hkbu.edu.hk`) is live again (it was 503 at the June 2026 review), but it is a link surface over Power BI reports and login-gated sub-apps, with no data API.
-- No central institutional developer portal and no institution-wide GitHub organisation exist; only research-group orgs (HKBUNLP, HKBU-HPML) publish code publicly.
-- This re-profile removes far more than it adds and is expected to lower the score. That is the correction working: the previous number was Elsevier's engineering credited to a university.
+## API Evangelist rating
 
-## Maintainers
+**Kin Score 23.6** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-- Kin Lane — kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 4.4 |
+| Contract governance | 18.2 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 26.3 |
+
+**Agent readiness 3.1** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 30.0** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/hong-kong-baptist-university/](https://apis.io/providers/hong-kong-baptist-university/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Hong Kong Baptist University: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/hong-kong-baptist-university/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
